@@ -9,12 +9,10 @@ import About from "../components/About/About";
 function Home() {
     return (
         <div>
-            <div>
-                <Header />
-                <Popular /> 
-                <Drinks />
-                <About />
-            </div>
+            <Header />
+            <Popular /> 
+            <Drinks />
+            <About />
             
         </div>
     )

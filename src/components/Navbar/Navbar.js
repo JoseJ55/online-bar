@@ -4,7 +4,7 @@ import "./style.css";
 function Navbar() {
     return (
         <div id="navbar">
-            <img src="#" alt="bar icon"/>
+            {/* <img src="#" alt="bar icon"/> */}
 
             <div id="navbarLinks">
                 <a href="/">Home</a>
