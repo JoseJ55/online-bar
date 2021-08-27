@@ -1,0 +1,37 @@
+#drinks {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+}
+
+#drinks p {
+    width: fit-content;
+    font-size: 2rem;
+    padding: 2vh 0;
+}
+
+#drinkSearch {
+    width: 80%;
+    display: flex;
+}
+
+#searchType {
+    width: 15%;
+    padding: 1vh 1vw;
+    font-size: 1rem;
+}
+
+#searchInput {
+    width: 70%;
+    padding: 1vh 1vw;
+    font-size: 1rem;
+}
+
+#searchButton {
+    width: 14%;
+    margin-left: 1%;
+}

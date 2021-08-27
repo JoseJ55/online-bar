@@ -5,6 +5,7 @@ function Navbar() {
     return (
         <div id="navbar">
             {/* <img src="#" alt="bar icon"/> */}
+            <p>Night Bar</p>
 
             <div id="navbarLinks">
                 <a href="/">Home</a>
