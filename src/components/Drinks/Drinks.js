@@ -15,11 +15,10 @@ function Drinks() {
             axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${text}`)
             .then((res) => {
                 setData(res.data.drinks)
+                setSearched(true)
                 console.log(res.data.drinks)
             }) 
         }
-        
-        setSearched(true)
     }
 
     return (

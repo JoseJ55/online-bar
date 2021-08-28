@@ -2,5 +2,6 @@
     width: 86%;
     margin: 1vh auto;
     padding: 1vh 2vw;
-    background-color: blue;
+    display: flex;
+    flex-wrap: wrap;
 }

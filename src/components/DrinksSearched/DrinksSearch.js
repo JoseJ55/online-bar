@@ -4,7 +4,6 @@ import "./style.css";
 import DrinkName from "../DrinkName/DrinkName";
 
 function DrinksSearch({ data }) {
-
     return (
         <div id="drinksSearch">
             {data.map((drink) => {
