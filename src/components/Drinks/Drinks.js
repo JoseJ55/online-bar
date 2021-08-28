@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import "./style.css";
 
 import DrinksSearch from "../DrinksSearched/DrinksSearch";
@@ -6,10 +7,19 @@ import DrinksSearch from "../DrinksSearched/DrinksSearch";
 function Drinks() {
     const [type, setType] = useState("name");
     const [text, setText] = useState("")
+    const [searched, setSearched] = useState(false)
+    const [data, setData] = useState({})
 
     const test = () => {
-        console.log(type)
-        console.log(text)
+        if(type === "name"){
+            axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${text}`)
+            .then((res) => {
+                setData(res.data.drinks)
+                console.log(res.data.drinks)
+            }) 
+        }
+        
+        setSearched(true)
     }
 
     return (
@@ -38,10 +48,15 @@ function Drinks() {
                     onClick={() => test()}
                 /> 
             </form>
-
-            <DrinksSearch 
+            {
+                searched ?
+                <DrinksSearch 
+                    type={type}
+                    data={data}
+                />:
+                <p></p>
+            }
             
-            />
         </div>
     )
 }

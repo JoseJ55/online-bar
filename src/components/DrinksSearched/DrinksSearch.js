@@ -1,11 +1,17 @@
 import React from "react";
-import axios from "axios";
 import "./style.css";
 
-function DrinksSearch() {
+import DrinkName from "../DrinkName/DrinkName";
+
+function DrinksSearch({ data }) {
+
     return (
-        <div>
-            Drinks search
+        <div id="drinksSearch">
+            {data.map((drink) => {
+                return <DrinkName
+                    drink={drink}
+                />
+            })}
         </div>
     )
 }
