@@ -1,18 +1,52 @@
-#drinkName {
+.drinkName {
     width: 29%;
     padding: 1%;
     margin: 1%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-#drinkName img {
+.drinkName:hover{
+    cursor: pointer;
+    /* transform: scale(2); */
+}
+
+.drinkState {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.drinkName img {
     width: 100%;
     background-size: cover;
     border-radius: 5%;
 }
 
-#drinkName p {
+.drinkName p {
     font-size: 1.5rem;
+}
+
+.drinkNameLook {
+    width: 29%;
+    padding: 1%;
+    margin: 1%;
+    transform: scale(1.5, 1);
+    background-color: blue;
+}
+
+.drinkStateLook {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: red;
+}
+
+.drinkStateTitle {
+    background-color: green;
+    font-size: 100%;
+    color: wheat;
+}
+
+.drinkStateIng {
+    font-size: 1rem;
 }
