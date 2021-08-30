@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import axios from "axios";
 import "./style.css";
 
@@ -9,6 +9,7 @@ function Drinks() {
     const [text, setText] = useState("")
     const [searched, setSearched] = useState(false)
     const [data, setData] = useState({})
+    const focusRef = useRef(null)
 
     const test = () => {
         if(type === "name"){
@@ -44,14 +45,19 @@ function Drinks() {
                     id="searchButton"
                     type="button"
                     value="Search"
-                    onClick={() => test()}
+                    onClick={() => {
+                        test()
+                        focusRef.current.scrollIntoView();
+                    }}
                 /> 
             </form>
             {
+                // need to get focus on results when search.
                 searched ?
                 <DrinksSearch 
                     type={type}
                     data={data}
+                    focusRef={focusRef}
                 />:
                 <p></p>
             }
