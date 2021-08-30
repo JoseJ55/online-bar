@@ -23,7 +23,7 @@ function Drinks() {
 
     return (
         <div id="drinks">
-            <p>Search Drink</p>
+            <p id="drinkTitle">Search Drink</p>
             <form id="drinkSearch">
                 <select 
                     id="searchType" 

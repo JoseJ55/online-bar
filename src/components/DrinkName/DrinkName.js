@@ -119,9 +119,13 @@ function DrinkName({ drink }) {
                 <button className="drinkNameLook" onClick={() => setState("normal")}>
                     <div className="drinkStateLook">
                         <p className="drinkStateTitle">{drink.strDrink}</p>
-                        <ul className="drinkStateIng">
-                            {getIngredients()}
-                        </ul>
+                        <div className="drinkStateIngs">
+                            <p><strong>Ingredients</strong></p>
+                            <ul className="drinkStateIng">
+                                {getIngredients()}
+                            </ul>
+                        </div>
+                        
                         <p className="drinkStateInstr">{drink.strInstructions}</p>
                     </div>
                 </button>

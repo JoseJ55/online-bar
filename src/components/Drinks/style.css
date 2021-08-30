@@ -7,9 +7,9 @@
     align-items: center;
 }
 
-#drinks p {
+#drinkTitle {
     width: fit-content;
-    font-size: 2rem;
+    font-size: 1.5rem;
     padding: 2vh 0;
 }
 
