@@ -47,7 +47,7 @@ function Drinks() {
                     value="Search"
                     onClick={() => {
                         test()
-                        focusRef.current.scrollIntoView();
+                        // focusRef.current.scrollIntoView();
                     }}
                 /> 
             </form>

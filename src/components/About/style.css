@@ -1,0 +1,22 @@
+#about {
+    width: 90%;
+    margin:  4vh auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#aboutTitle {
+    font-size: 1.5rem;
+}
+
+#aboutSlogen{
+    width: 100%;
+    text-align: center;
+    padding: 1vh 0;
+}
+
+#aboutDesc {
+    width: 70%;
+    text-align: center;
+}
