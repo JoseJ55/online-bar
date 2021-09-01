@@ -19,6 +19,16 @@ function Drinks() {
                 setSearched(true)
                 console.log(res.data.drinks)
             }) 
+            // keep getting nothing for data.
+        } else if (type === "ingredent") {
+            axios.get(
+                `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${text}`
+            )
+            .then((res) => {
+                setData(res.data.drinks)
+                setSearched(true)
+                console.log(res.data.drinks)
+            })
         }
     }
 
@@ -47,7 +57,6 @@ function Drinks() {
                     value="Search"
                     onClick={() => {
                         test()
-                        // focusRef.current.scrollIntoView();
                     }}
                 /> 
             </form>
