@@ -7,15 +7,15 @@ import IngName from "../IngName/IngName";
 function DrinksSearch({ type, data, focusRef }) {
     return (
         <div id="drinksSearch" ref={focusRef}>
-            {
+            {/* {
                 type === "name" ?
-                <div>
+                <div> */}
                     {data.map((drink) => {
                         return <DrinkName
                             drink={drink}
                         />
                     })} 
-                </div>:
+                {/* </div>:
                 <div>
                     {data.map((drink) => {
                         return <IngName
@@ -23,7 +23,7 @@ function DrinksSearch({ type, data, focusRef }) {
                         />
                     })}
                 </div>
-            }
+            } */}
             
             
         </div>

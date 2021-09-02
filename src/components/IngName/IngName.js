@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./style.css";
+// import "./style.css";
 
 function IngName({ drink }) {
     const [newData, setNewData] = useState([])
@@ -47,9 +47,7 @@ function IngName({ drink }) {
     }
 
     return(
-        <div>
-            {/* {drink.strDrink}
-            {getNewData()} */}
+        <>
             {
                 state === "normal" ?
                 <button className="ingName" onClick={() => setState("clicked")}>
@@ -74,7 +72,7 @@ function IngName({ drink }) {
                     </div>
                 </button>
             }
-        </div>
+        </>
     )
 }
 

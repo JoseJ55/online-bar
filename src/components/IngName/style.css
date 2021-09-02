@@ -1,0 +1,80 @@
+/* .ingName {
+    width: 29%;
+    min-height: 50vh;
+    padding: 1%;
+    margin: 1%;
+    border-radius: 5%;
+}
+
+.ingName:hover{
+    cursor: pointer;
+}
+
+.ingState {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.ingName img {
+    width: 100%;
+    background-size: cover;
+    border-radius: 5%;
+}
+
+.ingName p {
+    font-size: 1.5rem;
+} */
+
+/* ------------------------------ */
+/* .ingNameLook {
+    width: 29%;
+    min-height: 50vh;
+    padding: 1% 2%;
+    margin: 1%;
+    transform: scale(1.4, 1);
+    background-color: #888;
+    border: #555 .1rem solid;
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ingNameLook:hover {
+    cursor: pointer;
+}
+
+.ingStateLook {
+    width: 100%;
+    margin: auto;
+}
+
+.ingStateTitle {
+    font-size: 2rem;
+    padding: .5vh 0;
+    width: 100%;
+    text-align: center;
+}
+
+.ingStateIngs {
+    width: 100%;
+    padding: 1vh 0;
+}
+
+.ingStateIngs p {
+    width: 100%;
+    font-size: 1.4rem;
+}
+
+.ingStateIng {
+    width: 100%;
+    font-size: 1rem;
+    list-style-type: none;
+    line-height: 3vh;
+}
+
+.ingStateInstr {
+    font-size: 1rem;
+    line-height: 3vh;
+} */

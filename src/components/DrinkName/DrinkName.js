@@ -1,8 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./style.css";
 
-function DrinkName({ drink }) {
+function DrinkName({ type, drink }) {
     const [state, setState] = useState("normal")
+    // const [newData, setNewData] = useState([])
+
+    // useEffect(() => {
+    //     getNewData()
+    // }, [])
+
+    // const getNewData = () => {
+    //     axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drink.idDrink}`)
+    //     .then((res) => {
+    //         setNewData(res.data.drinks[0])
+    //         console.log(res.data.drinks[0])
+    //     })
+    // }
 
     const setIngredients = () => {
         let arr = []
@@ -45,7 +59,8 @@ function DrinkName({ drink }) {
                         <p>{drink.strDrink}</p>
                         <p>{drink.strAlcoholic}</p>
                     </div>
-                </button>:
+                </button>
+                :
                 <button className="drinkNameLook" onClick={() => setState("normal")}>
                     <div className="drinkStateLook">
                         <p className="drinkStateTitle">{drink.strDrink}</p>
