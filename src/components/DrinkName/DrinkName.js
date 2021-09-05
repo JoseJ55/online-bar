@@ -4,19 +4,31 @@ import "./style.css";
 
 function DrinkName({ type, drink }) {
     const [state, setState] = useState("normal")
+    const [currentDrink, setCurrentDrink] = useState([])
     // const [newData, setNewData] = useState([])
 
-    // useEffect(() => {
-    //     getNewData()
-    // }, [])
+    useEffect(() => {
+        setCurrentDrink(drink)
+        // getNewData()
+        if(currentDrink.strAlcoholic == null){
+            getNewData();
 
-    // const getNewData = () => {
-    //     axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drink.idDrink}`)
-    //     .then((res) => {
-    //         setNewData(res.data.drinks[0])
-    //         console.log(res.data.drinks[0])
-    //     })
-    // }
+        }
+    }, [])
+
+    // useEffect(() => {
+    //     console.log("update")
+    // },[currentDrink])
+
+    const getNewData = () => {
+        axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drink.idDrink}`)
+        .then((res) => {
+            // setNewData(res.data.drinks[0])
+            // console.log(res.data.drinks[0])
+            setCurrentDrink(res.data.drinks[0])
+            // console.log(res)
+        })
+    }
 
     const setIngredients = () => {
         let arr = []
@@ -24,10 +36,10 @@ function DrinkName({ type, drink }) {
             let ing = `strIngredient${i+1}`
             let mea = `strMeasure${i+1}`
 
-            if(drink[ing] != null && drink[mea] != null){
-                arr.push([drink[ing], drink[mea]])
-            } else if(drink[mea] == null && drink[ing] != null){
-                arr.push([drink[ing]])
+            if(currentDrink[ing] != null && currentDrink[mea] != null){
+                arr.push([currentDrink[ing], currentDrink[mea]])
+            } else if(currentDrink[mea] == null && currentDrink[ing] != null){
+                arr.push([currentDrink[ing]])
             }
         }
 
@@ -55,15 +67,15 @@ function DrinkName({ type, drink }) {
                 state === "normal" ?
                 <button className="drinkName" onClick={() => setState("clicked")}>
                     <div className="drinkState">
-                        <img src={drink.strDrinkThumb} alt={`${drink.strDrink}`}/>
-                        <p>{drink.strDrink}</p>
-                        <p>{drink.strAlcoholic}</p>
+                        <img src={currentDrink.strDrinkThumb} alt={`${currentDrink.strDrink}`}/>
+                        <p>{currentDrink.strDrink}</p>
+                        <p>{currentDrink.strAlcoholic}</p>
                     </div>
                 </button>
                 :
                 <button className="drinkNameLook" onClick={() => setState("normal")}>
                     <div className="drinkStateLook">
-                        <p className="drinkStateTitle">{drink.strDrink}</p>
+                        <p className="drinkStateTitle">{currentDrink.strDrink}</p>
                         <div className="drinkStateIngs">
                             <p><strong>Ingredients</strong></p>
                             <ul className="drinkStateIng">
@@ -71,7 +83,7 @@ function DrinkName({ type, drink }) {
                             </ul>
                         </div>
                         
-                        <p className="drinkStateInstr">{drink.strInstructions}</p>
+                        <p className="drinkStateInstr">{currentDrink.strInstructions}</p>
                     </div>
                 </button>
             }

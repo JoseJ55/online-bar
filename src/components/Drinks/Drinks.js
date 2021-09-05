@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import "./style.css";
 
@@ -12,6 +12,7 @@ function Drinks() {
     const focusRef = useRef(null)
 
     const test = () => {
+        setSearched(false)
         if(type === "name"){
             axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${text}`)
             .then((res) => {
@@ -19,7 +20,6 @@ function Drinks() {
                 setSearched(true)
                 console.log(res.data.drinks)
             }) 
-            // keep getting nothing for data.
         } else if (type === "ingredent") {
             axios.get(
                 `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${text}`
