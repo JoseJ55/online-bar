@@ -5,28 +5,18 @@ import "./style.css";
 function DrinkName({ type, drink }) {
     const [state, setState] = useState("normal")
     const [currentDrink, setCurrentDrink] = useState([])
-    // const [newData, setNewData] = useState([])
 
     useEffect(() => {
         setCurrentDrink(drink)
-        // getNewData()
         if(currentDrink.strAlcoholic == null){
             getNewData();
-
         }
     }, [])
-
-    // useEffect(() => {
-    //     console.log("update")
-    // },[currentDrink])
 
     const getNewData = () => {
         axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drink.idDrink}`)
         .then((res) => {
-            // setNewData(res.data.drinks[0])
-            // console.log(res.data.drinks[0])
             setCurrentDrink(res.data.drinks[0])
-            // console.log(res)
         })
     }
 
