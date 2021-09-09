@@ -22,15 +22,27 @@
     width: 15%;
     padding: 1vh 1vw;
     font-size: 1rem;
+    border-radius: 1vw 0  0 1vw;
+}
+
+#searchType:hover {
+    cursor: pointer;
+}
+
+#searchType .op {
+    border-radius: 1vw 0 0 1vw;
+    cursor: pointer;
 }
 
 #searchInput {
     width: 70%;
     padding: 1vh 1vw;
     font-size: 1rem;
+    border-radius: 0 1vw 1vw 0;
 }
 
 #searchButton {
     width: 14%;
     margin-left: 1%;
+    border-radius: 1vw;
 }

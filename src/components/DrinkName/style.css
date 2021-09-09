@@ -13,6 +13,8 @@
     padding: 1%;
     margin: 1%;
     border-radius: 5%;
+    background-color: var(--secondaryBack);
+    color: var(--textColor);
 }
 
 .drinkName:hover{
@@ -34,6 +36,7 @@
 
 .drinkName p {
     font-size: 1.5rem;
+    color: var(--textColor);
 }
 
 /* ---------------Info button--------------------- */

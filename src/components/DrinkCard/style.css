@@ -1,10 +1,11 @@
 #drinkCard {
     width: 80%;
     margin: 3vh auto;
-    background-color: grey;
+    background-color: var(--secondaryBack);
     border-radius: 6%;
     padding: 2vh 0;
     display: flex;
+    color: var(--textColor)
 }
 
 #nameImg {

@@ -1,22 +1,28 @@
 #about {
     width: 90%;
     margin:  4vh auto;
+    padding: 2vh 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-size: 1.5rem;
+    color: var(--textColor);
 }
 
 #aboutTitle {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    padding: 2vh 0;
 }
 
 #aboutSlogen{
     width: 100%;
     text-align: center;
     padding: 1vh 0;
+    line-height: 120%;
 }
 
 #aboutDesc {
     width: 70%;
     text-align: center;
+    padding: 1vh 0;
 }

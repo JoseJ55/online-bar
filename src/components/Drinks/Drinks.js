@@ -40,8 +40,8 @@ function Drinks() {
                     id="searchType" 
                     onChange={(value) => setType(value.target.value)}
                 >
-                    <option value="name">Name</option>
-                    <option value="ingredent">Ingredent</option>
+                    <option className="op" value="name">Name</option>
+                    <option className="op" value="ingredent">Ingredent</option>
                 </select>
 
                 <input 
