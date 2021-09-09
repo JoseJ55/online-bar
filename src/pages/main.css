@@ -4,12 +4,24 @@
 }
 
 :root {
-    --secondaryBack: #671111 ;
+    /* old purple: #57256F */
+    --secondaryBack: #520909 ;
     --textColor: white;
+    --lightRed: #AE0000;
 }
 
 body {
-    background-color: black;
+    background-color: #e5e5f7;
+    /* red: #650707  */
+    /* light purple: #5F1B81 */
+    /* dark purple:  #3E204D */
+
+    /* background-image: radial-gradient(circle at center center, #520909 , #000), repeating-radial-gradient(circle at center center, #520909 , #520909 , 10px, transparent 20px, transparent 10px);
+    background-blend-mode: multiply; */
+
+    background-color: #e5e5f7;
+    background-image:  repeating-radial-gradient( circle at 50% 0, transparent 0, #520909 6px ), repeating-linear-gradient( #3B0909, #000 );
+
     font-family: Arial, Helvetica, sans-serif;
     color: white;
 }

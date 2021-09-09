@@ -45,4 +45,11 @@
     width: 14%;
     margin-left: 1%;
     border-radius: 1vw;
+    font-size: 1rem;
+}
+
+#searchButton:hover {
+    background-color: #AE0000;
+    cursor: pointer;
+    color: white;
 }

@@ -14,7 +14,6 @@ function IngName({ drink }) {
         axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drink.idDrink}`)
         .then((res) => {
             setNewData(res.data.drinks[0])
-            console.log(res.data.drinks[0])
         })
     }
 

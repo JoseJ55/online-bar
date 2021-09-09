@@ -11,6 +11,11 @@ function Drinks() {
     const [data, setData] = useState({})
     const focusRef = useRef(null)
 
+    const textEmpty = () => {
+        // e.preventDefault();
+        setText("")
+    }
+
     const test = () => {
         setSearched(false)
         if(type === "name"){
@@ -46,8 +51,9 @@ function Drinks() {
 
                 <input 
                     id="searchInput"
-                    type="text" 
+                    type="text"
                     placeholder="Enter name or ingredent..."
+                    value={text}
                     onChange={(e) => {setText(e.target.value)}}
                 />
 
@@ -57,6 +63,7 @@ function Drinks() {
                     value="Search"
                     onClick={() => {
                         test()
+                        textEmpty()
                     }}
                 /> 
             </form>
