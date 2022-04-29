@@ -1,6 +1,14 @@
 #popular {
     width: 90%;
-    margin:auto;
+    margin: auto;
+    margin-top: 40vh;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#popular-title {
+    font-size: 2rem;
 }

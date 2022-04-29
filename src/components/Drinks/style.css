@@ -1,6 +1,7 @@
 #drinks {
     width: 90%;
     margin: auto;
+    margin-bottom: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

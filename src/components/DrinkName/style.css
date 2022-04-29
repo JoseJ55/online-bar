@@ -54,6 +54,7 @@
     flex-direction: column;
     justify-content: space-between;
     color: var(--textColor);
+    transition: ease-in-out 0.5s;
 }
 
 .drinkNameLook:hover {
