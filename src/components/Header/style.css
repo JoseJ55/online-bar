@@ -1,8 +1,55 @@
 #header {
     width: 100%;
     height: 100vh;
-    background-image: url("./../../Images/proriat-hospitality-lwoTuByIuC4-unsplash.jpg");
+    position: relative;
+    z-index: 1;
+}
+
+.header-background {
+    width: 100%;
+    height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.header-forground {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    transform: translateY(2%);
+}
+
+#header-info-container {
+    position: relative;
+    z-index: 4;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--main-color), var(--main-color), transparent);
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+#header-info-container p {
+    color: var(--text-color);
+    margin-left: 20%;
+    width: 30%;
+    text-wrap: wrap;
+    font-size: 1.4rem;
+}
+
+.title-text {
+    color: var(--accent-color);
+    font-size: 1.7rem;
 }
