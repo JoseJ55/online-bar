@@ -1,17 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./style.css";
 
 function Navbar() {
-    return (
-        <div id="navbar">
-            <p>Night Bar</p>
+    const [scrollPosition, setScrollPosition] = useState(0);
 
-            <div id="navbarLinks">
-                <a href="/" onClick={e => {
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentPosition = window.scrollY;
+            setScrollPosition(currentPosition);
+        }
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        }
+    }, []);
+
+    return (
+        <div id="navbar" style={{ backgroundColor: `rgba(0, 0, 0, ${Math.min(scrollPosition / 500, 0.8)})`}}>
+            <div onClick={e => {
                 let a = document.getElementById("header");
                 e.preventDefault();
                 a && a.scrollIntoView({ behavior: "smooth", block: "start"});
-                }}>Home</a>
+                }} id="navbar-logo-container">
+                <img id="navbar-logo" src={'/images/thirstyLOGO.png'} alt="company logo" />
+            </div>
+
+            <div id="navbarLinks">
                 <a href="/" onClick={e => {
                 let a = document.getElementById("popular");
                 e.preventDefault();
@@ -22,6 +38,16 @@ function Navbar() {
                 e.preventDefault();
                 a && a.scrollIntoView({ behavior: "smooth", block: "start"});
                 }}>Drinks</a>
+                <a href="/" onClick={e => {
+                let a = document.getElementById("menu");
+                e.preventDefault();
+                a && a.scrollIntoView({ behavior: "smooth", block: "start"});
+                }}>Menu</a>
+                <a href="/" onClick={e => {
+                let a = document.getElementById("app");
+                e.preventDefault();
+                a && a.scrollIntoView({ behavior: "smooth", block: "start"});
+                }}>App</a>
                 <a href="/" onClick={e => {
                 let a = document.getElementById("about");
                 e.preventDefault();

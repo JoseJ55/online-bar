@@ -8,6 +8,11 @@
     --secondaryBack: #520909 ;
     --textColor: white;
     --lightRed: #AE0000;
+
+    --text-color: #DECBB7;
+    --main-color: #011627;
+    --secondary-color: #841C26;
+    --accent-color: #537D8D;
 }
 
 body {
