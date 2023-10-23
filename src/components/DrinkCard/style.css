@@ -1,46 +1,27 @@
 #drinkCard {
-    width: 80%;
-    margin: 3vh auto;
+    width: 100%;
+    min-width: 100px;
+    min-height: 100px;
     background-color: var(--secondaryBack);
     border-radius: 6%;
-    padding: 2vh 0;
-    display: flex;
-    color: var(--textColor)
+    color: var(--textColor);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-template-rows: repeat(1, 1fr);
 }
 
 #nameImg {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
-
-#nameImg p {
-    font-size: 2rem;
-    padding: 2vh 0;
+    width: 100%;
+    grid-row: 1;
+    grid-column: 1;
 }
 
 #nameImg img {
-    width: 80%;
-    border-radius: 10%;
-}
-
-#ingIns {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 1vh 2vw
-}
-
-#ingIns ul {
     width: 100%;
-    list-style-type: none;
-    font-size: 1.5rem;
+    border-radius: 4%;
 }
 
-#ingIns p {
-    font-size: 1.5rem;
+#info {
+    grid-row: 1;
+    grid-column: 2 / 4;
 }

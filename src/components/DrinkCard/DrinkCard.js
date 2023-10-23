@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef, memo } from "react";
 import "./style.css";
 import axios from "axios";
 
-// import {searchRandom} from "./../../utils/API"
+export default memo(function DrinkCard({ currentDrink, order }) {
+    const cardRef = useRef();
+    const imageRef = useRef();
 
-function DrinkCard() {
-    const [randomData, setRandomData] = useState({})
+    const [randomData, setRandomData] = useState({});
+    const [showInfo, setShowInfo] = useState(false);
 
     useEffect(() => {
         axios.get("https://www.thecocktaildb.com/api/json/v1/1/random.php")
@@ -39,21 +41,35 @@ function DrinkCard() {
         })
     }
 
+    useEffect(() => {
+        if (currentDrink === order) {
+            imageRef.current.style.gridRow = 1;
+            imageRef.current.style.gridColumn = 1;
+            setShowInfo(true);
+        } else {
+            imageRef.current.style.gridRow = 1;
+            imageRef.current.style.gridColumn = '1/5';
+            setShowInfo(false);
+        }
+    }, [currentDrink, order])
+
     return (
-        <div id="drinkCard">
-            <div id="nameImg">
-                <p>{randomData.strDrink} - ({randomData.strAlcoholic})</p>
+        <div id="drinkCard" ref={cardRef}>
+            <div id="nameImg" ref={imageRef}>
                 <img src={randomData.strDrinkThumb} alt={`${randomData.strDrink}`}/>
             </div>
-            <div id="ingIns">
-                <ul>
-                    {getIngredients()}
-                </ul>
-                <p>{randomData.strInstructions}</p>
-            </div>
             
+            {showInfo && <div id="info">
+                <div id="info-name">
+                    <p>{randomData.strDrink}</p>
+                </div>
+                <div id="info-ing">
+                    {getIngredients()}
+                </div>
+                <div id="info-instructions">
+                    <p>{randomData.strInstructions}</p>
+                </div>
+            </div>}
         </div>
     )
-}
-
-export default DrinkCard;
+});
