@@ -1,93 +1,101 @@
 import React, { useRef, useState } from "react";
-// import { motion, useAnimation } from 'framer-motion/dist/framer-motion'
 import "./style.css";
 
 import DrinkCard from "../DrinkCard/DrinkCard";
 
-function Popular() {
+export default function Popular() {
     const [currentDrink, setCurrentDrink] = useState(0);
+    const [drinkInfo, setDrinkInfo] = useState(null);
 
-    const firstRef = useRef();
-    const secondRef = useRef();
-    const thirdRef = useRef();
-    const fourthRef = useRef();
+    const containerRef = useRef();
+    const infoRef = useRef();
+    const cardRefs = [useRef(), useRef(), useRef(), useRef()];
 
     const setActive = (position) => {
         if (currentDrink !== 0) revertPrev();
         if (position === currentDrink) {
-            // this runs to clear the current item being viewed, but it also does not continue to the if statement, otherwise the item will stay
             revertPrev();
             return;
         }
 
-        if (position === 1) {
-            firstRef.current.style.gridRow = 1; 
-            firstRef.current.style.gridColumn = 'span 4';
-        } else if (position === 2) {
-            secondRef.current.style.gridRow = 1;
-            secondRef.current.style.gridColumn = 'span 4';
-        } else if (position === 3) {
-            thirdRef.current.style.gridRow = 1;
-            thirdRef.current.style.gridColumn = 'span 4';
-        } else if (position === 4) {
-            fourthRef.current.style.gridRow = 1;
-            fourthRef.current.style.gridColumn = 'span 4';
-        }
+        cardRefs[position - 1].current.style.transform = 'translateY(calc(-100% - 10px))';
+        // containerRef.current.style.transform = 'translate(-50%, -55%)';
+        containerRef.current.style.top = '65%';
+        infoRef.current.style.transform = 'translateY(calc(-100% - 10px))';
+
         setCurrentDrink(position)
     }
 
     const revertPrev = () => {
-        if (currentDrink === 1) {
-            firstRef.current.style.gridRow = 2; 
-            firstRef.current.style.gridColumn = 1; 
-        } else if (currentDrink === 2) {
-            secondRef.current.style.gridRow = 2;
-            secondRef.current.style.gridColumn = 2; 
-        } else if (currentDrink === 3) {
-            thirdRef.current.style.gridRow = 2;
-            thirdRef.current.style.gridColumn = 3; 
-        } else if (currentDrink === 4) {
-            fourthRef.current.style.gridRow = 2;
-            fourthRef.current.style.gridColumn = 4; 
-        }
+        cardRefs[currentDrink - 1].current.style.transform = 'translateY(0%)';
+        // containerRef.current.style.transform = 'translate(-50%, -50%)';
+        containerRef.current.style.top = '50%';
+        infoRef.current.style.transform = 'translateY(0%)';
 
+        setDrinkInfo(null);
         setCurrentDrink(0);
+    }
+
+    const setIngredients = (drink) => {
+        let arr = []
+        for(let i = 0; i < 15; i++){
+            let ing = `strIngredient${i+1}`
+            let mea = `strMeasure${i+1}`
+
+            if(drink[ing] != null && drink[mea] != null){
+                arr.push([drink[ing], drink[mea]])
+            } else if(drink[mea] == null && drink[ing] != null){
+                arr.push([drink[ing]])
+            }
+        }
+        return arr;
+    }
+
+    const getIngredients = (drink) => {
+        let ingredients = setIngredients(drink)
+
+        return ingredients.map((data) => {
+            if(data.length < 2){
+                return <li>{data[0]}</li>
+            } else {
+                return <li>{data[0]} - {data[1]}</li>
+            }
+        })
     }
 
     return (
         <div id="popular">
-            <div id='drink-container'>
-                <div 
-                    id="first-drink" 
-                    className="card-container" 
-                    ref={firstRef} 
-                    onClick={() => setActive(1)}>
-                    <DrinkCard currentDrink={currentDrink} order={1} />
+            <div id='drink-container' ref={containerRef}>
+                <div id="drink-info" ref={infoRef}>
+                {drinkInfo && <>
+                    <div id="drink-image">
+                        <img src={drinkInfo?.strDrinkThumb} alt={`${drinkInfo?.strDrink}`}/>
+                    </div>
+                    <div id="info">
+                        <div id="info-name">
+                            <p>{drinkInfo?.strDrink}</p>
+                        </div>
+                        <div id="info-ing">
+                            {getIngredients(drinkInfo)}
+                        </div>
+                        <div id="info-instructions">
+                            <p>{drinkInfo?.strInstructions}</p>
+                        </div>
+                    </div>
+                </>}
                 </div>
-                <div 
-                    id="second-drink" 
-                    className="card-container" 
-                    ref={secondRef} 
-                    onClick={() => setActive(2)}>
-                    <DrinkCard currentDrink={currentDrink} order={2} />
-                </div>
-                <div 
-                    id="third-drink" 
-                    className="card-container" 
-                    ref={thirdRef} 
-                    onClick={() => setActive(3)}>
-                    <DrinkCard currentDrink={currentDrink} order={3} />
-                </div>
-                <div 
-                    id="fourth-drink" 
-                    className="card-container" 
-                    ref={fourthRef} 
-                    onClick={() => setActive(4)}>
-                    <DrinkCard currentDrink={currentDrink} order={4} />
-                </div>
+
+                {cardRefs.map((cardRef, index) => (
+                    <div
+                        key={index}
+                        className="card-container"
+                        ref={cardRef}
+                        onClick={() => setActive(index + 1)}
+                    >
+                        <DrinkCard currentDrink={currentDrink} order={index + 1} setDrinkInfo={setDrinkInfo} />
+                    </div>
+                ))}
             </div>
         </div>
     )
 }
-
-export default Popular;

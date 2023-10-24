@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef, memo } from "react";
 import "./style.css";
 import axios from "axios";
 
-export default memo(function DrinkCard({ currentDrink, order }) {
+export default memo(function DrinkCard({ currentDrink, order, setDrinkInfo }) {
     const cardRef = useRef();
     const imageRef = useRef();
 
@@ -43,12 +43,13 @@ export default memo(function DrinkCard({ currentDrink, order }) {
 
     useEffect(() => {
         if (currentDrink === order) {
-            imageRef.current.style.gridRow = 1;
-            imageRef.current.style.gridColumn = 1;
+            // imageRef.current.style.gridRow = 1;
+            // imageRef.current.style.gridColumn = 1;
+            setDrinkInfo(randomData);
             setShowInfo(true);
         } else {
-            imageRef.current.style.gridRow = 1;
-            imageRef.current.style.gridColumn = '1/5';
+            // imageRef.current.style.gridRow = 1;
+            // imageRef.current.style.gridColumn = '1/5';
             setShowInfo(false);
         }
     }, [currentDrink, order])
@@ -59,7 +60,7 @@ export default memo(function DrinkCard({ currentDrink, order }) {
                 <img src={randomData.strDrinkThumb} alt={`${randomData.strDrink}`}/>
             </div>
             
-            {showInfo && <div id="info">
+            {/* {showInfo && <div id="info">
                 <div id="info-name">
                     <p>{randomData.strDrink}</p>
                 </div>
@@ -69,7 +70,7 @@ export default memo(function DrinkCard({ currentDrink, order }) {
                 <div id="info-instructions">
                     <p>{randomData.strInstructions}</p>
                 </div>
-            </div>}
+            </div>} */}
         </div>
     )
 });
