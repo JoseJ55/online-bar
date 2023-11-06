@@ -14,11 +14,8 @@ export default function Popular() {
     const infoCoverRef = useRef();
 
     const setActive = async (position) => {
+        if (position === currentDrink) return;
         if (currentDrink !== 0) await revertPrev();
-        if (position === currentDrink) {
-            await revertPrev();
-            return;
-        }
 
         infoRef.current.style.gridTemplateRows = `${cardRefs[0].current.offsetHeight}px`;
         cardRefs[position - 1].current.classList.add('animate');
@@ -70,7 +67,7 @@ export default function Popular() {
             <div id='drink-container' ref={containerRef}>
                 <div id="drink-info" ref={infoRef}>
                 {drinkInfo && <>
-                    <div id="drink-image">
+                    <div id="drink-image" onClick={async () => await revertPrev()}>
                         <img src={drinkInfo?.strDrinkThumb} ref={infoImageRef} alt={`${drinkInfo?.strDrink}`}/>
                     </div>
                     <div id="info">

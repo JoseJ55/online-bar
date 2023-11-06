@@ -38,6 +38,10 @@
     border-radius: 4%;
 }
 
+#drink-image:hover {
+    cursor: pointer;
+}
+
 #drink-image img {
     width: 100%;
     border-radius: 4%;
@@ -72,11 +76,11 @@
     width: 100%;
     height: 100%;
     background-color: var(--main-color);
+    transition: left 1s ease-in-out;
 }
 
 #info-cover.animate {
     left: 100%;
-    transition: left 1s ease-in-out;
 }
 
 #info-name {
