@@ -18,18 +18,14 @@ export default function Popular() {
             return;
         }
 
-        cardRefs[position - 1].current.style.transform = 'translateY(calc(-100% - 10px))';
-        // containerRef.current.style.transform = 'translate(-50%, -55%)';
-        containerRef.current.style.top = '65%';
+        cardRefs[position - 1].current.style.top = '-100%';
         infoRef.current.style.transform = 'translateY(calc(-100% - 10px))';
 
         setCurrentDrink(position)
     }
 
     const revertPrev = () => {
-        cardRefs[currentDrink - 1].current.style.transform = 'translateY(0%)';
-        // containerRef.current.style.transform = 'translate(-50%, -50%)';
-        containerRef.current.style.top = '50%';
+        cardRefs[currentDrink - 1].current.style.top = '0%';
         infoRef.current.style.transform = 'translateY(0%)';
 
         setDrinkInfo(null);
@@ -88,6 +84,7 @@ export default function Popular() {
                 {cardRefs.map((cardRef, index) => (
                     <div
                         key={index}
+                        id={`drink${index + 1}`}
                         className="card-container"
                         ref={cardRef}
                         onClick={() => setActive(index + 1)}
