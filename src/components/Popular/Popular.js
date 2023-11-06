@@ -10,23 +10,29 @@ export default function Popular() {
     const containerRef = useRef();
     const infoRef = useRef();
     const cardRefs = [useRef(), useRef(), useRef(), useRef()];
+    const infoImageRef = useRef();
+    const infoCoverRef = useRef();
 
-    const setActive = (position) => {
-        if (currentDrink !== 0) revertPrev();
+    const setActive = async (position) => {
+        if (currentDrink !== 0) await revertPrev();
         if (position === currentDrink) {
-            revertPrev();
+            await revertPrev();
             return;
         }
 
-        cardRefs[position - 1].current.style.top = '-100%';
-        infoRef.current.style.transform = 'translateY(calc(-100% - 10px))';
+        infoRef.current.style.gridTemplateRows = `${cardRefs[0].current.offsetHeight}px`;
+        cardRefs[position - 1].current.classList.add('animate');
+        setTimeout(() => {
+            infoImageRef.current.classList.add('animate');
+            infoCoverRef.current.classList.add('animate');
+        }, 1000) // This needs a timeout for the same time it takes to animate the opacity change in css through the animate class.
 
         setCurrentDrink(position)
     }
 
-    const revertPrev = () => {
-        cardRefs[currentDrink - 1].current.style.top = '0%';
-        infoRef.current.style.transform = 'translateY(0%)';
+    const revertPrev = async () => {
+        infoRef.current.style.gridTemplateRows = '10px';
+        cardRefs[currentDrink - 1].current.classList.remove('animate');
 
         setDrinkInfo(null);
         setCurrentDrink(0);
@@ -50,11 +56,11 @@ export default function Popular() {
     const getIngredients = (drink) => {
         let ingredients = setIngredients(drink)
 
-        return ingredients.map((data) => {
+        return ingredients.map((data, index) => {
             if(data.length < 2){
-                return <li>{data[0]}</li>
+                return <li key={index}>{data[0]}</li>
             } else {
-                return <li>{data[0]} - {data[1]}</li>
+                return <li key={index}>{data[0]} - {data[1]}</li>
             }
         })
     }
@@ -65,17 +71,20 @@ export default function Popular() {
                 <div id="drink-info" ref={infoRef}>
                 {drinkInfo && <>
                     <div id="drink-image">
-                        <img src={drinkInfo?.strDrinkThumb} alt={`${drinkInfo?.strDrink}`}/>
+                        <img src={drinkInfo?.strDrinkThumb} ref={infoImageRef} alt={`${drinkInfo?.strDrink}`}/>
                     </div>
                     <div id="info">
+                        <div id="info-cover" ref={infoCoverRef}></div>
                         <div id="info-name">
                             <p>{drinkInfo?.strDrink}</p>
                         </div>
-                        <div id="info-ing">
-                            {getIngredients(drinkInfo)}
-                        </div>
-                        <div id="info-instructions">
-                            <p>{drinkInfo?.strInstructions}</p>
+                        <div id="info-desc">
+                            <div id="info-ing">
+                                {getIngredients(drinkInfo)}
+                            </div>
+                            <div id="info-instructions">
+                                <p>{drinkInfo?.strInstructions}</p>
+                            </div>
                         </div>
                     </div>
                 </>}
