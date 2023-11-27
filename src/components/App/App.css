@@ -1,0 +1,40 @@
+#app {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#app-info {
+    width: 20%;
+    padding: 2%;
+    margin-right: 5%;
+}
+
+#app-info p {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 5%;
+}
+
+#app-name {
+    font-size: 1.25rem;
+    color: var(--accent-color)
+}
+
+#app-info-icons {
+    width: 100%;
+    display: flex;
+    gap: 2%;
+}
+
+#app-info-icons img {
+    width: 30%;
+}
+
+#app-image {
+    background-color: green;
+    width: 40%;
+    height: 100%;
+}
