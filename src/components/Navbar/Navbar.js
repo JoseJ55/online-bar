@@ -39,7 +39,7 @@ function Navbar() {
                 a && a.scrollIntoView({ behavior: "smooth", block: "start"});
                 }}>Drinks</a>
                 <a href="/" onClick={e => {
-                let a = document.getElementById("menu");
+                let a = document.getElementById("menu-section");
                 e.preventDefault();
                 a && a.scrollIntoView({ behavior: "smooth", block: "start"});
                 }}>Menu</a>

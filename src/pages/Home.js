@@ -6,6 +6,7 @@ import Popular from "../components/Popular/Popular";
 import Drinks from "../components/Drinks/Drinks";
 import About from "../components/About/About";
 import Navbar from "../components/Navbar/Navbar";
+import MenuSection from "../components/MenuSection/MenuSection";
 
 function Home() {
     return (
@@ -13,8 +14,9 @@ function Home() {
             <Navbar />
             <Header />
             <Popular /> 
-            <Drinks />
-            <About />
+            {/* <Drinks />
+            <About /> */}
+            <MenuSection />
             
         </div>
     )
