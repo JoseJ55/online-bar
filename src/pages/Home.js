@@ -8,6 +8,7 @@ import About from "../components/About/About";
 import Navbar from "../components/Navbar/Navbar";
 import MenuSection from "../components/MenuSection/MenuSection";
 import App from "../components/App/App";
+import Footer from "../components/Footer/Footer";
 
 function Home() {
     return (
@@ -15,10 +16,11 @@ function Home() {
             <Navbar />
             <Header />
             <Popular /> 
-            {/* <Drinks />
-            <About /> */}
+            {/* <Drinks /> */}
             <MenuSection />
             <App />
+            {/* <About /> */}
+            <Footer />
         </div>
     )
 }
