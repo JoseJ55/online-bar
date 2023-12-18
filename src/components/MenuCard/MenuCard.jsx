@@ -6,7 +6,7 @@ function MenuCard({ data, headerImage }) {
 
   return (
     <div className='menuCard'>
-      <div className='menuCard-header' style={{ padding: headerImage ? '10% 0' : '5% 0' }}>
+      <div className='menuCard-header' id={title === 'Cocktails' ? 'cocktails' : title === 'Savory Delights' ? 'food' : ''} style={{ padding: headerImage ? '10% 0' : '5% 0' }}>
         {headerImage && <img className='menuCard-header-background' src={image} alt='sub header' />}
         <p className='menuCard-header-title'>{title}</p>
 

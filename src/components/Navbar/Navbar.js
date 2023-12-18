@@ -35,8 +35,16 @@ function Navbar({ menu }) {
             <div id="navbarLinks">
                 {menu ? (
                     <>
-                        <a href="/">Drinks</a>
-                        <a href="/">Food</a> 
+                        <a href="/" onClick={e => {
+                        let a = document.getElementById("cocktails");
+                        e.preventDefault();
+                        a && a.scrollIntoView({ behavior: "smooth", block: "start"});
+                        }}>Drinks</a>
+                        <a href="/" onClick={e => {
+                        let a = document.getElementById("food");
+                        e.preventDefault();
+                        a && a.scrollIntoView({ behavior: "smooth", block: "start"});
+                        }}>Food</a> 
                     </>
                 ): (
                     <>
