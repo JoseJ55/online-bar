@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./style.css";
 
-function Navbar() {
+function Navbar({ menu }) {
     const [scrollPosition, setScrollPosition] = useState(0);
 
     useEffect(() => {
@@ -20,6 +20,11 @@ function Navbar() {
     return (
         <div id="navbar" style={{ backgroundColor: `rgba(0, 0, 0, ${Math.min(scrollPosition / 500, 0.8)})`}}>
             <div onClick={e => {
+                if (menu) {
+                    window.location.href = '/';
+                    return;
+                }
+                
                 let a = document.getElementById("header");
                 e.preventDefault();
                 a && a.scrollIntoView({ behavior: "smooth", block: "start"});
@@ -28,31 +33,40 @@ function Navbar() {
             </div>
 
             <div id="navbarLinks">
-                <a href="/" onClick={e => {
-                let a = document.getElementById("popular");
-                e.preventDefault();
-                a && a.scrollIntoView({ behavior: "smooth", block: "start"});
-                }}>Popular</a>
-                <a href="/" onClick={e => {
-                let a = document.getElementById("drinks");
-                e.preventDefault();
-                a && a.scrollIntoView({ behavior: "smooth", block: "start"});
-                }}>Drinks</a>
-                <a href="/" onClick={e => {
-                let a = document.getElementById("menu-section");
-                e.preventDefault();
-                a && a.scrollIntoView({ behavior: "smooth", block: "start"});
-                }}>Menu</a>
-                <a href="/" onClick={e => {
-                let a = document.getElementById("app");
-                e.preventDefault();
-                a && a.scrollIntoView({ behavior: "smooth", block: "start"});
-                }}>App</a>
-                <a href="/" onClick={e => {
-                let a = document.getElementById("about");
-                e.preventDefault();
-                a && a.scrollIntoView({ behavior: "smooth", block: "start"});
-                }}>About</a>
+                {menu ? (
+                    <>
+                        <a href="/">Drinks</a>
+                        <a href="/">Food</a> 
+                    </>
+                ): (
+                    <>
+                        <a href="/" onClick={e => {
+                        let a = document.getElementById("popular");
+                        e.preventDefault();
+                        a && a.scrollIntoView({ behavior: "smooth", block: "start"});
+                        }}>Popular</a>
+                        <a href="/" onClick={e => {
+                        let a = document.getElementById("drinks");
+                        e.preventDefault();
+                        a && a.scrollIntoView({ behavior: "smooth", block: "start"});
+                        }}>Drinks</a>
+                        <a href="/" onClick={e => {
+                        let a = document.getElementById("menu-section");
+                        e.preventDefault();
+                        a && a.scrollIntoView({ behavior: "smooth", block: "start"});
+                        }}>Menu</a>
+                        <a href="/" onClick={e => {
+                        let a = document.getElementById("app");
+                        e.preventDefault();
+                        a && a.scrollIntoView({ behavior: "smooth", block: "start"});
+                        }}>App</a>
+                        <a href="/" onClick={e => {
+                        let a = document.getElementById("about");
+                        e.preventDefault();
+                        a && a.scrollIntoView({ behavior: "smooth", block: "start"});
+                        }}>About</a>
+                    </>
+                )}
             </div>
         </div>
     )

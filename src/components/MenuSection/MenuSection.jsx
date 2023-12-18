@@ -3,7 +3,7 @@ import './MenuSection.css';
 
 function MenuSection() {
     const handleClick = () => {
-        console.log('click in menu');
+        window.location.href = '/menu';
     }
 
   return (
@@ -18,7 +18,6 @@ function MenuSection() {
 
         <div id='menu-section-image'>
             <img src="/images/alessio-zaccaria-zt0p3BYtDfM-unsplash(edited).jpg" alt='drink from menu' />
-            {/* <img src="/images/marvin-meyer-2SDjvx5jEZQ-unsplash.jpg" alt='drink from menu' /> */}
         </div>
     </div>
   )

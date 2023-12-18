@@ -1,0 +1,73 @@
+.menuCard {
+    width: 100%;
+}
+
+.menuCard-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10% 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.menuCard-header-background {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    opacity: 0.75;
+    background-color: black;
+}
+
+.menuCard-header-title {
+    width: fit-content;
+    margin: 2% auto;
+    font-size: 3rem;
+    color: var(--text-color);
+    z-index: 2;
+}
+
+.menuCard-header-text {
+    width: 40%;
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--text-color);
+    z-index: 2;
+}
+
+.menuCard-items {
+    width: 74%;
+    padding: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 3%;
+    margin: auto;
+    min-height: 35vh;
+}
+
+.menuCard-item {
+    width: 45%;
+    margin-bottom: 2%;
+}
+
+.menuCard-item-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--accent-color);
+    margin: 1% 0;
+}
+
+.menuCard-item-head p {
+    color: var(--text-color);
+    font-size: 1.1rem;
+}
+
+.menuCard-item-desc {
+    color: var(--text-color);
+    font-size: 1rem;
+}
