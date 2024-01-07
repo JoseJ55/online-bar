@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './MenuInfo.css';
 
 import MenuCard from '../MenuCard/MenuCard';
@@ -138,15 +138,36 @@ function MenuInfo() {
         }
     ]
 
+    const [scrollPosition, setScrollPosition] = useState(0);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentPosition = window.scrollY;
+            console.log(currentPosition)
+            setScrollPosition(currentPosition);
+        }
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        }
+    }, []);
+
   return (
     <div id='menuInfo'>
-        <div id='menuCard-header'>
-            <img id='menuCard-header-background' src='/images/louis-hansel-Zg7_HNM9H7I-unsplash.jpg' alt='menu header' />
-            <p id='menuCard-header-title'>Our Menu</p>
-            <p id='menuCard-header-text'>Indulge in Our Exquisite Selection of Food and Drinks</p>
+        <div id='menuInfo-header'>
+            <img 
+                id='menuInfo-header-background' 
+                src='/images/louis-hansel-Zg7_HNM9H7I-unsplash.jpg' 
+                alt='menu header' 
+                style={{ transform: `translateY(-${Math.min(scrollPosition / 700, 10)}%)` }} />
+
+            <p id='menuInfo-header-title'>Our Menu</p>
+            <p id='menuInfo-header-text'>Indulge in Our Exquisite Selection of Food and Drinks</p>
         </div>
 
-        <div id='menucard-container'>
+        <div id='menuInfo-container'>
           <p id='container-title'>Quench Your Thirst with Our Handcrafted Cocktails and Fine Whiskeys</p>
           
           <div id='container-items'>
