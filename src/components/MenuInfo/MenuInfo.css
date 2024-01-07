@@ -16,17 +16,24 @@
 }
 
 #menuInfo-header-background {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    background-color: black;
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
     z-index: 1;
     opacity: 0.9;
-    transform: translate ease-in-out 1s;
+    /* transform: translate ease-in-out 1s; */
 }
+
+/* #menuInfo-header-background::after {
+    transform: translateZ(-1px);
+} */
 
 #menuInfo-header-title {
     color: var(--text-color);

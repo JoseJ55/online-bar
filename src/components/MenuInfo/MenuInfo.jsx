@@ -143,7 +143,6 @@ function MenuInfo() {
     useEffect(() => {
         const handleScroll = () => {
             const currentPosition = window.scrollY;
-            console.log(currentPosition)
             setScrollPosition(currentPosition);
         }
 
@@ -157,11 +156,12 @@ function MenuInfo() {
   return (
     <div id='menuInfo'>
         <div id='menuInfo-header'>
-            <img 
-                id='menuInfo-header-background' 
-                src='/images/louis-hansel-Zg7_HNM9H7I-unsplash.jpg' 
-                alt='menu header' 
-                style={{ transform: `translateY(-${Math.min(scrollPosition / 700, 10)}%)` }} />
+            <div
+                id='menuInfo-header-background'
+                style={{
+                    backgroundImage: `url(${process.env.PUBLIC_URL}/images/louis-hansel-Zg7_HNM9H7I-unsplash.jpg)`,
+                    transform: `translateY(-${Math.min(scrollPosition / 700, 10)}%)`
+                }}></div>
 
             <p id='menuInfo-header-title'>Our Menu</p>
             <p id='menuInfo-header-text'>Indulge in Our Exquisite Selection of Food and Drinks</p>
