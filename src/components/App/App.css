@@ -34,7 +34,52 @@
 }
 
 #app-image {
-    background-color: green;
     width: 40%;
     height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: phoneHover 10s ease-in infinite;
 }
+
+@keyframes phoneHover {
+    0% {
+        transform: translateY(0%);
+    }
+    10% {
+        transform: translateY(-0.5%);
+    }
+    20% {
+        transform: translateY(-1%);
+    }
+    25% {
+        transform: translateY(-1.5%);
+    }
+    30% {
+        transform: translateY(-1%);
+    }
+    40% {
+        transform: translateY(-0.5%);
+    }
+    50% {
+        transform: translateY(0%);
+    }
+    60% {
+        transform: translateY(0.5%);
+    }
+    70% {
+        transform: translateY(1%);
+    }
+    75% {
+        transform: translateY(1.5%);
+    }
+    80% {
+        transform: translateY(1%);
+    }
+    90% {
+        transform: translateY(0.5%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+  }

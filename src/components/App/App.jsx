@@ -14,9 +14,7 @@ function App() {
             </div>
         </div>
 
-        <div id='app-image'>
-
-        </div>
+        <img src='/images/appOnPhone.png' alt='app on phone' id='app-image' />
     </div>
   )
 }
