@@ -53,3 +53,43 @@
     color: var(--accent-color);
     font-size: 1.7rem;
 }
+
+@media screen and (max-width: 500px) {
+    .header-background {
+        width: 200%;
+        background-size: cover;
+        left: -30%;
+    }
+    .header-forground {
+        width: 200%;
+        background-size: cover;
+        left: -30%;
+    }
+
+    #header-info-container p {
+        margin-left: 15%;
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .header-background {
+        width: 150%;
+        left: -20%;
+    }
+    .header-forground {
+        width: 150%;
+        left: -20%;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .header-background {
+        width: 120%;
+        left: -10%;
+    }
+    .header-forground {
+        width: 120%;
+        left: -10%;
+    }
+}

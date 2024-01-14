@@ -137,6 +137,18 @@ function Navbar({ menu }) {
                     {menu ?
                         <>
                             <div className='navbar-open-item' onClick={e => {
+                                if (menu) {
+                                    window.location.href = '/';
+                                    return;
+                                }
+                                handleClose(e);
+                            }}>
+                                <p>Home</p>
+                            </div>
+
+                            <div className='navbar-open-items-border'></div>
+
+                            <div className='navbar-open-item' onClick={e => {
                                 let a = document.getElementById("cocktails");
                                 e.preventDefault();
                                 a && a.scrollIntoView({ behavior: "smooth", block: "start"});
