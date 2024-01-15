@@ -62,3 +62,35 @@
     border-radius: 10px;
     opacity: 0.9;
 }
+
+@media screen and (max-width: 500px) {
+    #menu-section-info-box {
+        width: 80%;
+        padding: 2%;
+    }
+    #menu-section-info-box p {
+        font-size: 1.1rem;
+        margin-bottom: 15%;
+    }
+    #menu-section-info-box button {
+        font-size: 0.9rem;
+    }
+    #menu-section-image {
+        width: 45%;
+        height: auto;
+    }
+    #menu-section-image img {
+        box-shadow: 0px 0px 20px 10px black;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    #menu-section-info-box {
+        width: 70%;
+        padding: 3%;
+    }
+    #menu-section-image {
+        width: 40%;
+        height: auto;
+    }
+}

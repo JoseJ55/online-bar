@@ -82,4 +82,30 @@
     100% {
         transform: translateY(0%);
     }
-  }
+}
+
+@media screen and (max-width: 500px) {
+    #app-info {
+        width: 30%;
+        margin-right: 2%;
+    }
+    #app-info p {
+        font-size: 1.1rem;
+        margin-bottom: 10%;
+    }
+    #app-name {
+        font-size: 1.4rem;
+    }
+    #app-sub-text {
+        font-size: 1rem !important;
+    }
+    #app-info-icons {
+        flex-direction: column;
+    }
+    #app-info-icons img {
+        width: 70%;
+    }
+    #app-image {
+        width: 50%;
+    }
+}
