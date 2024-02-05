@@ -36,7 +36,7 @@ function Footer() {
                     Links
                 </p>
                 <div 
-                    className='footer-link'
+                    className='footer-link popular-tag'
                     onClick={e => {
                         let a = document.getElementById("popular");
                         e.preventDefault();
@@ -75,7 +75,7 @@ function Footer() {
                 >
                     <p className='link'>App</p>
                 </div>
-                <div 
+                {/* <div 
                     className='footer-link'
                     onClick={e => {
                         let a = document.getElementById("about");
@@ -84,7 +84,7 @@ function Footer() {
                     }}
                 >
                     <p className='link'>About</p>
-                </div>
+                </div> */}
             </div>
 
             <div id='footer-contact'>

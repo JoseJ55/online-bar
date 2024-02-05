@@ -170,7 +170,7 @@ function Navbar({ menu }) {
                         </>
                         :
                         <>
-                            <div className='navbar-open-item' onClick={e => {
+                            <div className='navbar-open-item popular-tag' onClick={e => {
                                 let a = document.getElementById("popular");
                                 e.preventDefault();
                                 a && a.scrollIntoView({ behavior: "smooth", block: "start"});
@@ -179,7 +179,7 @@ function Navbar({ menu }) {
                                 <p>Popular</p>
                             </div>
             
-                            <div className='navbar-open-items-border'></div>
+                            <div className='navbar-open-items-border popular-tag'></div>
             
                             <div className='navbar-open-item' onClick={e => {
                                 let a = document.getElementById("drinks");

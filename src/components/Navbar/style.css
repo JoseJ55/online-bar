@@ -76,6 +76,9 @@
 }
 
 @media screen and (max-width: 500px) {
+    .popular-tag {
+        display: none;
+    }
     #navbar {
         width: 100%;
         display: flex;

@@ -197,6 +197,12 @@
     }
 }
 
+@media screen and (max-width: 500px) {
+    .popular-tag {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 800px) {
     #footer-top {
         padding-bottom: 5%;
