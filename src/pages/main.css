@@ -29,4 +29,5 @@ body {
 
     font-family: Arial, Helvetica, sans-serif;
     color: white;
+    overflow-x: hidden;
 }

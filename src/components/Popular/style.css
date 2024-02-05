@@ -117,8 +117,13 @@
 
 #info-ing li {
     color: var(--text-color);
-    list-style-type: none;
+    list-style-type: circle;
     width: 100%;
+}
+
+#info-title {
+    color: var(--text-color);
+    font-size: 1rem !important;
 }
 
 #info-instructions {
@@ -168,4 +173,100 @@
 }
 #drink4 {
     left: 75%
+}
+
+@media screen and (max-width: 500px) {
+    #popular {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 501px) and (max-width: 800px) {
+    #drink-container {
+        width: 85%;
+    }
+    #info {
+        width: 98%;
+        height: 98%;
+        max-height: 98%;
+    }
+    #info-name p {
+        font-size: 1rem;
+    }
+    #info-title {
+        padding: 1% 0;
+    }
+    #info-ing li {
+        font-size: 0.8rem;
+        list-style-type: circle;
+        text-wrap: wrap;
+    }
+    #info-instructions p {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1100px) {
+    #drink-container {
+        width: 85%;
+    }
+    #info-name p {
+        font-size: 1.1rem;
+    }
+    #info-title {
+        padding-left: 0 !important;
+    }
+    #info-ing {
+        padding: 0 2%;
+    }
+    #info-ing li {
+        padding: 0 2%;
+        width: 96%;
+    }
+    #info-instructions {
+        padding: 0 2%;
+    }
+    #info-instructions p {
+        padding: 0 2%;
+        width: 96%;
+    }
+}
+
+@media screen and (min-width: 1101px) and (max-width: 1500px) {
+    #info-title {
+        font-size: 1.4rem;
+        padding-left: 0 !important;
+    }
+    #info-ing {
+        padding: 0 2%;
+    }
+    #info-ing li {
+        padding: 0 2%;
+        width: 96%;
+    }
+    #info-instructions {
+        padding: 0 2%;
+    }
+    #info-instructions p {
+        padding: 0 2%;
+        width: 96%;
+    }
+}
+
+@media screen and (min-width: 1501px) {
+    #drink-container {
+        width: 55%;
+    }
+    #info {
+        width: 94%;
+        padding: 0 3%;
+    }
+    #info-title {
+        font-size: 1.2rem !important;
+        padding-left: 0 !important;
+    }
+    #info-instructions p {
+        padding: 0 2%;
+        width: 96%;
+    }
 }

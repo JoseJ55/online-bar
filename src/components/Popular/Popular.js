@@ -77,9 +77,11 @@ export default function Popular() {
                         </div>
                         <div id="info-desc">
                             <div id="info-ing">
+                                <p id="info-title">Ingredients</p>
                                 {getIngredients(drinkInfo)}
                             </div>
                             <div id="info-instructions">
+                                <p id="info-title">Method</p>
                                 <p>{drinkInfo?.strInstructions}</p>
                             </div>
                         </div>

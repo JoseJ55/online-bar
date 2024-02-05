@@ -1,19 +1,13 @@
 #drinkCard {
     width: 100%;
-    min-width: 100px;
-    min-height: 100px;
+    /* min-width: 100px; */
+    /* height: 25vh; */
     border-radius: 6%;
     color: var(--textColor);
-    /* display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    grid-template-rows: repeat(1, 1fr);
-    align-self: flex-end; */
 }
 
 #nameImg {
     width: 100%;
-    /* grid-row: 1;
-    grid-column: 1; */
 }
 
 #nameImg img {
@@ -24,4 +18,8 @@
 #info {
     /* grid-row: 1;
     grid-column: 2 / 4; */
+}
+
+@media screen and (max-width: 500px) {
+    
 }
