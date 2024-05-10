@@ -13,6 +13,6 @@
     "rules": {
         "no-unused-vars": "warn",
         "react/prop-types": "off",
-        "prettier/prettier": ["error", {}, { "usePrettierrc": true }]
+        "prettier/prettier": ["error", { "endOfLine": "auto" }, { "usePrettierrc": true }]
     }
 }
