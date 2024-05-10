@@ -7,10 +7,10 @@ import Menu from './pages/Menu';
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/menu" element={<Menu />} />
-      </Routes>
+      <Routes> 
+      <Route path="/" element={<Home />} />
+                <Route path="/menu" element={<Menu />} />
+    </Routes>
     </Router>
   );
 }
