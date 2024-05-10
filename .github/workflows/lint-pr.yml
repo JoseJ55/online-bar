@@ -3,7 +3,7 @@ name: Website lint
 on:
   pull_request:
     paths:
-      - 'frontend/web/website/**'
+      - 'src/**'
 
 jobs:
   lint:
