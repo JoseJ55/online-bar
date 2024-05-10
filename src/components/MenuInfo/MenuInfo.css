@@ -16,7 +16,7 @@
 }
 
 #menuInfo-header-background {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -117,7 +117,6 @@
         margin: 7% 0;
     }
 }
-
 
 @media screen and (min-width: 1101px) and (max-width: 1600px) {
     #menuInfo-container {

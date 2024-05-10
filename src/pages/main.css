@@ -5,14 +5,14 @@
 
 :root {
     /* old purple: #57256F */
-    --secondaryBack: #520909 ;
+    --secondaryBack: #520909;
     --textColor: white;
-    --lightRed: #AE0000;
+    --lightRed: #ae0000;
 
-    --text-color: #DECBB7;
+    --text-color: #decbb7;
     --main-color: #011627;
-    --secondary-color: #841C26;
-    --accent-color: #537D8D;
+    --secondary-color: #841c26;
+    --accent-color: #537d8d;
 }
 
 body {

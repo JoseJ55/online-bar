@@ -136,7 +136,7 @@ function MenuInfo() {
                 }
             ]
         }
-    ]
+    ];
 
     const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -144,40 +144,45 @@ function MenuInfo() {
         const handleScroll = () => {
             const currentPosition = window.scrollY;
             setScrollPosition(currentPosition);
-        }
+        };
 
         window.addEventListener('scroll', handleScroll);
 
         return () => {
             window.removeEventListener('scroll', handleScroll);
-        }
+        };
     }, []);
 
-  return (
-    <div id='menuInfo'>
-        <div id='menuInfo-header'>
-            <div
-                id='menuInfo-header-background'
-                style={{
-                    backgroundImage: `url(${process.env.PUBLIC_URL}/images/louis-hansel-Zg7_HNM9H7I-unsplash.jpg)`,
-                    transform: `translateY(-${Math.min(scrollPosition / 700, 10)}%)`
-                }}></div>
+    return (
+        <div id="menuInfo">
+            <div id="menuInfo-header">
+                <div
+                    id="menuInfo-header-background"
+                    style={{
+                        backgroundImage: `url(${process.env.PUBLIC_URL}/images/louis-hansel-Zg7_HNM9H7I-unsplash.jpg)`,
+                        transform: `translateY(-${Math.min(scrollPosition / 700, 10)}%)`
+                    }}
+                ></div>
 
-            <p id='menuInfo-header-title'>Our Menu</p>
-            <p id='menuInfo-header-text'>Indulge in Our Exquisite Selection of Food and Drinks</p>
-        </div>
+                <p id="menuInfo-header-title">Our Menu</p>
+                <p id="menuInfo-header-text">
+                    Indulge in Our Exquisite Selection of Food and Drinks
+                </p>
+            </div>
 
-        <div id='menuInfo-container'>
-          <p id='container-title'>Quench Your Thirst with Our Handcrafted Cocktails and Fine Whiskeys</p>
-          
-          <div id='container-items'>
-            {data.map((item, index) => (
-                <MenuCard data={item} headerImage={item?.image ? true : false} />
-            ))}
-          </div>
+            <div id="menuInfo-container">
+                <p id="container-title">
+                    Quench Your Thirst with Our Handcrafted Cocktails and Fine Whiskeys
+                </p>
+
+                <div id="container-items">
+                    {data.map((item, index) => (
+                        <MenuCard data={item} headerImage={item?.image ? true : false} />
+                    ))}
+                </div>
+            </div>
         </div>
-    </div>
-  )
+    );
 }
 
-export default MenuInfo
+export default MenuInfo;

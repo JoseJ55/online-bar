@@ -17,7 +17,7 @@
     color: var(--textColor);
 }
 
-.drinkName:hover{
+.drinkName:hover {
     cursor: pointer;
     /* transform: scale(2); */
 }
@@ -47,8 +47,8 @@
     padding: 1% 2%;
     margin: 1%;
     transform: scale(1.4, 1);
-    background-color: #8B1717;
-    border: var(--lightRed) .1rem solid;
+    background-color: #8b1717;
+    border: var(--lightRed) 0.1rem solid;
     border-radius: 5%;
     display: flex;
     flex-direction: column;
@@ -68,7 +68,7 @@
 
 .drinkStateTitle {
     font-size: 2rem;
-    padding: .5vh 0;
+    padding: 0.5vh 0;
     width: 100%;
     text-align: center;
 }

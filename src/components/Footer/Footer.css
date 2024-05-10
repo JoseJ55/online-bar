@@ -32,7 +32,7 @@
 
 #footer-name-text {
     font-size: 1rem;
-    color: var(--text-color)
+    color: var(--text-color);
 }
 
 #footer-links {
@@ -61,12 +61,12 @@
 .link {
     width: fit-content;
     font-size: 1rem;
-    color: var(--text-color)
+    color: var(--text-color);
 }
 
 .link:hover {
     cursor: pointer;
-    color: var(--accent-color)
+    color: var(--accent-color);
 }
 
 #footer-contact {

@@ -10,7 +10,7 @@
     color: var(--textColor);
     background-color: black;
     border-radius: 40px;
-    border: 1px solid var(--secondaryBack)
+    border: 1px solid var(--secondaryBack);
 }
 
 #aboutTitle {
@@ -18,7 +18,7 @@
     padding: 2vh 0;
 }
 
-#aboutSlogen{
+#aboutSlogen {
     width: 100%;
     text-align: center;
     padding: 1vh 0;

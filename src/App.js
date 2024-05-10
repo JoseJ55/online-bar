@@ -1,8 +1,8 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import Home from "./pages/Home";
-import Menu from "./pages/Menu";
+import Home from './pages/Home';
+import Menu from './pages/Menu';
 
 function App() {
   return (
