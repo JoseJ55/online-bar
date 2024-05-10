@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useRef, memo } from "react";
-import "./style.css";
-import axios from "axios";
+import React, { useEffect, useState, useRef, memo } from 'react';
+import './style.css';
+import axios from 'axios';
 
 export default memo(function DrinkCard({ currentDrink, order, setDrinkInfo }) {
     const cardRef = useRef();
@@ -10,36 +10,41 @@ export default memo(function DrinkCard({ currentDrink, order, setDrinkInfo }) {
     const [showInfo, setShowInfo] = useState(false);
 
     useEffect(() => {
-        axios.get("https://www.thecocktaildb.com/api/json/v1/1/random.php")
-        .then((data) => setRandomData(data.data.drinks[0]))
-    }, [])
+        axios
+            .get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+            .then((data) => setRandomData(data.data.drinks[0]));
+    }, []);
 
     const setIngredients = () => {
-        let arr = []
-        for(let i = 0; i < 15; i++){
-            let ing = `strIngredient${i+1}`
-            let mea = `strMeasure${i+1}`
+        let arr = [];
+        for (let i = 0; i < 15; i++) {
+            let ing = `strIngredient${i + 1}`;
+            let mea = `strMeasure${i + 1}`;
 
-            if(randomData[ing] != null && randomData[mea] != null){
-                arr.push([randomData[ing], randomData[mea]])
-            } else if(randomData[mea] == null && randomData[ing] != null){
-                arr.push([randomData[ing]])
+            if (randomData[ing] != null && randomData[mea] != null) {
+                arr.push([randomData[ing], randomData[mea]]);
+            } else if (randomData[mea] == null && randomData[ing] != null) {
+                arr.push([randomData[ing]]);
             }
         }
         return arr;
-    }
+    };
 
     const getIngredients = () => {
-        let ingredients = setIngredients()
+        let ingredients = setIngredients();
 
         return ingredients.map((data) => {
-            if(data.length < 2){
-                return <li>{data[0]}</li>
+            if (data.length < 2) {
+                return <li>{data[0]}</li>;
             } else {
-                return <li>{data[0]} - {data[1]}</li>
+                return (
+                    <li>
+                        {data[0]} - {data[1]}
+                    </li>
+                );
             }
-        })
-    }
+        });
+    };
 
     useEffect(() => {
         if (currentDrink === order) {
@@ -52,14 +57,14 @@ export default memo(function DrinkCard({ currentDrink, order, setDrinkInfo }) {
             // imageRef.current.style.gridColumn = '1/5';
             setShowInfo(false);
         }
-    }, [currentDrink, order])
+    }, [currentDrink, order]);
 
     return (
         <div id="drinkCard" ref={cardRef}>
             <div id="nameImg" ref={imageRef}>
-                <img src={randomData.strDrinkThumb} alt={`${randomData.strDrink}`}/>
+                <img src={randomData.strDrinkThumb} alt={`${randomData.strDrink}`} />
             </div>
-            
+
             {/* {showInfo && <div id="info">
                 <div id="info-name">
                     <p>{randomData.strDrink}</p>
@@ -72,5 +77,5 @@ export default memo(function DrinkCard({ currentDrink, order, setDrinkInfo }) {
                 </div>
             </div>} */}
         </div>
-    )
+    );
 });

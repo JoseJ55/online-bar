@@ -92,7 +92,9 @@
         margin: 0;
     }
 
-    #navbar-links {display: none;}
+    #navbar-links {
+        display: none;
+    }
 
     #navbar-close {
         display: flex;

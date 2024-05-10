@@ -35,14 +35,18 @@
     box-shadow: 0 0 5px 1px black;
     border-radius: 10px;
     transform: scale(1);
-    transition: transform ease 1s, box-shadow ease 1s;
+    transition:
+        transform ease 1s,
+        box-shadow ease 1s;
 }
 
 #menu-section-info-box button:hover {
     cursor: pointer;
     transform: scale(1.1);
     box-shadow: 0 0 5px 5px black;
-    transition: transform ease 1s, box-shadow ease 1s;
+    transition:
+        transform ease 1s,
+        box-shadow ease 1s;
 }
 
 #menu-section-image {

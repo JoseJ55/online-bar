@@ -23,7 +23,7 @@
     width: 15%;
     padding: 1vh 1vw;
     font-size: 1rem;
-    border-radius: 1vw 0  0 1vw;
+    border-radius: 1vw 0 0 1vw;
 }
 
 #searchType:hover {
@@ -50,7 +50,7 @@
 }
 
 #searchButton:hover {
-    background-color: #AE0000;
+    background-color: #ae0000;
     cursor: pointer;
     color: white;
 }

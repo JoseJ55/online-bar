@@ -5,13 +5,13 @@ import MenuInfo from '../components/MenuInfo/MenuInfo';
 import Footer from '../components/Footer/Footer';
 
 function Menu() {
-  return (
-    <div id="menu">
-        <Navbar menu={true} />
-        <MenuInfo />
-        <Footer />
-    </div>
-  )
+    return (
+        <div id="menu">
+            <Navbar menu={true} />
+            <MenuInfo />
+            <Footer />
+        </div>
+    );
 }
 
-export default Menu
+export default Menu;
