@@ -22,12 +22,10 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-        working-directory: ./frontend/web/website
 
       - name: Lint
         id: lint
         run: npm run lint
-        working-directory: ./frontend/web/website
 
       - name: Lint and Fix
         if: failure()
@@ -39,4 +37,3 @@ jobs:
           git commit -m "Auto Linting"
           git push origin ${{ steps.branch.outputs.branch_name }}
           exit 0
-        working-directory: ./frontend/web/website
