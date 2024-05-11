@@ -10,9 +10,9 @@
     --lightRed: #ae0000;
 
     --text-color: #decbb7;
-    --main-color: #011627;
+    --main-color: #060D13;
     --secondary-color: #841c26;
-    --accent-color: #537d8d;
+    --accent-color: #689FB4;
 
     --custom-font: 'Barlow';
 }
@@ -29,7 +29,7 @@ body {
     background-color: var(--main-color);
     /* background-image:  repeating-radial-gradient( circle at 50% 0, transparent 0, #520909 6px ), repeating-linear-gradient( #3B0909, #000 ); */
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--custom-font), sans-serif;
     color: white;
     overflow-x: hidden;
 }

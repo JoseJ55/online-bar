@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 import './style.css';
 
 import DrinkCard from '../DrinkCard/DrinkCard';
@@ -68,7 +69,7 @@ export default function Popular() {
 
   return (
     <div id="popular">
-      <div id="drink-container" ref={containerRef}>
+      <motion.div id="drink-container" ref={containerRef}>
         <div id="drink-info" ref={infoRef}>
           {drinkInfo && (
             <>
@@ -114,7 +115,7 @@ export default function Popular() {
             />
           </div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }
