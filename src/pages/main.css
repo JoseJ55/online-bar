@@ -13,6 +13,8 @@
     --main-color: #011627;
     --secondary-color: #841c26;
     --accent-color: #537d8d;
+
+    --custom-font: 'Barlow';
 }
 
 body {
