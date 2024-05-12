@@ -2,6 +2,7 @@
     width: 100%;
     min-height: 100vh;
     display: flex;
+    flex-direction: row-reverse;
     justify-content: center;
     align-items: center;
 }
@@ -13,13 +14,21 @@
 }
 
 #app-info p {
-    font-size: 1rem;
     color: var(--text-color);
     margin-bottom: 5%;
 }
 
+#app-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#app-sub-text {
+    font-size: 1.1rem;
+}
+
 #app-name {
-    font-size: 1.25rem;
+    font-size: 1.6rem;
     color: var(--accent-color);
 }
 
@@ -29,8 +38,17 @@
     gap: 2%;
 }
 
+.app-info-icon {
+    width: 35%;
+    transition: all 0.5s ease-in-out;
+}
+
+.app-info-icon:hover {
+    cursor: pointer;
+}
+
 #app-info-icons img {
-    width: 30%;
+    width: 100%;
 }
 
 #app-image {

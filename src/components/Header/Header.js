@@ -24,8 +24,8 @@ function Header() {
         <motion.div
           id="header-info-container-details"
           dragConstraints={parentRef}
-          drag
-          dragMomentum={false}
+          // drag
+          // dragMomentum={false}
         >
           <p id="header-info-title" onMouseDown={handleMouseDown}>
             Experience Seamless Dining & Drinking
